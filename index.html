@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>Etch A Sketch Project</head>
+    <head>
+    <title>Etch A Sketch Project</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    </head>
 
     <body>
-        <script></script>
+
+        <div id="grid-container"></div>
+
+        <script>
+
+            container = document.getElementById("grid-container");
+
+            function createGrid(rows, cols){
+
+                const totalCells = rows * cols
+
+                for (let i = 0; i < totalCells; i++) {
+
+                const cell = document.createElement("div");
+                cell.classList.add("grid-item");
+                container.appendChild(cell);
+            }
+        }
+            createGrid(16, 16);
+
+
+
+        </script>
     </body>
 </html>
