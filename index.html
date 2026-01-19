@@ -24,12 +24,14 @@
 
                 const cell = document.createElement("div");
                 cell.classList.add("grid-item");
+
+                cell.addEventListener('mouseenter', function() {
+                    this.classList.add("hovered");
+                });
                 container.appendChild(cell);
             }
         }
             createGrid(16, 16);
-
-
 
         </script>
     </body>

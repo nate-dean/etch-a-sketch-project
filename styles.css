@@ -11,4 +11,10 @@
     aspect-ratio: 1 / 1;
     box-sizing: border-box;
     border: 1px solid #ccc;
+    background-color: white;
+    transition: background-color 0.1s;
+}
+
+.hovered {
+    background-color: #333;
 }
