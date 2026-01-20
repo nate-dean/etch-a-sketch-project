@@ -25,6 +25,12 @@ header {
     width: 650px;
     height: 650px;
     border: 1px solid black;
+
+    flex-grow: 1;
+    gap: 0;
+    max-width: 800px;
+    max-height: 800px;
+    margin: 0 auto;
 }
 
 .grid-item {

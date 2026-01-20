@@ -20,7 +20,21 @@
 
         <script>
 
-            container = document.getElementById("grid-container");
+            const container = document.getElementById("grid-container");
+            const newGridBtn = document.getElementById("newGridBtn");
+            const MAX_SQUARES_PER_SIDE = 100;
+
+            function promptNewGrid() {
+                let input = prompt("Enter number of squares per side (e.g: 16 for a 16x16 grid. Max = 100:)")
+                const size = parseInt(input);
+
+                if (size && size > 0 && size <= 100) {
+                    createGrid(size);
+                } else if (input !== null) {
+                    alert("Invalid input. Please enter a number inbetween 0 and 100")
+                }
+
+            }
 
             function createGrid(rows, cols){
 
@@ -38,6 +52,8 @@
             }
         }
             createGrid(16, 16);
+
+        
 
         </script>
     </body>
