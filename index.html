@@ -24,8 +24,10 @@
             const newGridBtn = document.getElementById("newGridBtn");
             const MAX_SQUARES_PER_SIDE = 100;
 
+            newGridBtn.addEventListener("click", promptNewGrid);
+
             function promptNewGrid() {
-                let input = prompt("Enter number of squares per side (e.g: 16 for a 16x16 grid. Max = 100:)")
+                let input = prompt("Enter number of squares per side (e.g: 16 for a 16x16 grid. Max = 100)")
                 const size = parseInt(input);
 
                 if (size && size > 0 && size <= 100) {
@@ -33,17 +35,19 @@
                 } else if (input !== null) {
                     alert("Invalid input. Please enter a number inbetween 0 and 100")
                 }
-
             }
 
-            function createGrid(rows, cols){
+            function createGrid(size){
 
-                const totalCells = rows * cols
+                container.innerHTML = "";
 
-                for (let i = 0; i < totalCells; i++) {
+                const totalCells = 100 / size;
+
+                for (let i = 0; i < size * size; i++) {
 
                 const cell = document.createElement("div");
                 cell.classList.add("grid-item");
+                cell.style.width = `${totalCells}%`
 
                 cell.addEventListener('mouseenter', function() {
                     this.classList.add("hovered");
@@ -51,7 +55,11 @@
                 container.appendChild(cell);
             }
         }
-            createGrid(16, 16);
+        createGrid(16);
+
+
+
+     
 
         
 
